@@ -26,27 +26,59 @@
             ></v-text-field>
           </div>
           <div>
-            <v-overflow-btn
-                dense
-                editable
-                color="purple"
-                :items="items"
-            ></v-overflow-btn>
+
+            <v-select :items="options" item-text="text" item-value="value" label="Lugar"
+            ></v-select>
           </div>
+
           <div class="white-line" style="background-color:rebeccapurple" ></div>
           <div>
             <v-btn
                 color="purple"
                 elevation="2"
-                outlined
+                class="white--text"
                 rounded
             >Buscar</v-btn>
           </div>
 
         </div>
         <div class="job-options" >
-          <v-img></v-img>
-          <div></div>
+          <v-img
+            lazy-src="../images/principal.png"
+            src="../images/principal.png"
+            max-width="500"
+            max-height="500"
+          ></v-img>
+          <div class="options-buttons">
+            <h2>Filtra empleos por especialidad</h2>
+            <v-btn
+                x-large
+                rounded
+                class="btn-1 purple white--text"
+
+            >Desarrolador movil</v-btn>
+            <v-btn
+                x-large
+                rounded
+                class="btn-2 purple white--text"
+            >Ciencia de Datos</v-btn>
+            <v-btn
+                x-large
+                rounded
+                class="btn-3 purple white--text"
+            >Diseño Gráfico</v-btn>
+            <v-btn
+                x-large
+                rounded
+                outlined
+                class="btn-4 purple white--text"
+            >UX Desing</v-btn>
+            <v-btn
+                x-large
+                rounded
+                class="btn-5 purple white--text"
+            >Programación Web</v-btn>
+          </div>
 
         </div>
 
@@ -66,9 +98,11 @@ export default {
   components: {
 
   },
-  data: () => ({
-    items: ['Trujillo', 'Chimbote', 'Lima', 'Arequipa'],
-  }),
+  data() {
+    return{
+      options: ["Chimbote","Lima","Callao","Trujillo","Caraba","Nuevo Chimbote","San pedro","La plata","Santiago","Buenos aires"]
+    }
+  }
 
 }
 </script>
@@ -153,7 +187,7 @@ export default {
     border-radius: 43px;
     height: 13%;
     align-items: center;
-    margin: 8px 0px;
+    margin: 60px 0px 0px 0px;
     display: flex;
     justify-content: space-evenly;
     align-content: center;
@@ -161,13 +195,75 @@ export default {
   }
 
   .job-options{
-    background: red;
+    background: transparent;
     width: 100%;
     height: 87%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
   }
   .v-label{
     color:purple !important;
   }
-
+  .v-input--hide-details{
+    margin-bottom: 14px !important;
+  }
+  .v-input--is-dirty{
+    margin-top:15px !important;
+  }
+  .options-buttons{
+    width: 44%;
+    height: 80%;
+    background-color:transparent;
+    display: grid;
+    grid-template-rows: 0.5fr 1fr 1fr;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .options-buttons h2{
+    grid-column: 1/12;
+    font-size: 2.5rem;
+    color: #7e027e;
+  }
+  .btn-1{
+    font-size: 12px !important;
+    grid-row: 2;
+    grid-column: 1/4;
+    height: 77px !important;
+    width: 186px !important;
+    font-weight: bold !important;
+  }
+  .btn-2{
+    font-size: 14px !important;
+    grid-row: 2;
+    grid-column: 5/8;
+    height: 77px !important;
+    width: 186px !important;
+    font-weight: bold !important;
+  }
+  .btn-3{
+    font-size: 14px !important;
+    grid-row: 2;
+    grid-column: 9/12;
+    height: 77px !important;
+    width: 186px !important;
+    font-weight: bold !important;
+  }
+  .btn-4{
+    grid-row: 3;
+    grid-column: 3/6;
+    font-size: 14px !important;
+    height: 77px !important;
+    width: 186px !important;
+    font-weight: bold !important;
+  }
+  .btn-5{
+    grid-row: 3;
+    grid-column: 7/10;
+    font-size: 12px !important;
+    height: 77px !important;
+    width: 186px !important;
+    font-weight: bold !important;
+  }
 
 </style>
