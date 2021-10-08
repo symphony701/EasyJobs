@@ -85,9 +85,39 @@
       </div>
 
     </div>
+    <!--Second Section-->
+
+    <div class="second-section" >
+      <v-container>
+        <v-row><h2>Entérate de todas las novedades de nuestra aplicación</h2></v-row>
+        <v-row>
+          <v-text-field label="Correo Electronico"
+                        hide-details="auto"
+                        color="purple">
+
+          </v-text-field>
+        </v-row>
+        <v-row>
+          <v-btn
+              color="purple"
+              elevation="2"
+              class="white--text"
+              rounded
+              large
+          >Enviar</v-btn>
+        </v-row>
+      </v-container>
+    </div>
 
 
   </div>
+
+
+
+
+
+
+
 </template>
 
 <script>
@@ -264,6 +294,12 @@ export default {
     height: 77px !important;
     width: 186px !important;
     font-weight: bold !important;
+  }
+  .second-section{
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
   }
 
 </style>
